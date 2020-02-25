@@ -88,7 +88,7 @@ void Game::ComposeFrame()
     gfx.DrawRect(xPos, yPos, xPos + width, yPos + height, c);
     */
     gfx.DrawRect(x0, y0, x1, y1, Colors::Magenta);
-
+    gfx.DrawRectDim(10, 10, 50, 50, Colors::Green);
     /*int v = 69;
     int& r = v;
     r += 420;
