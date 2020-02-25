@@ -316,6 +316,38 @@ void Graphics::PutPixel( int x,int y,Color c )
 	pSysBuffer[Graphics::ScreenWidth * y + x] = c;
 }
 
+void Graphics::DrawRect(int x0, int y0, int x1, int y1, Color c)
+{
+	//TestandSwap(x0, x1);
+	//TestandSwap(y0, y1);
+
+	if (x0 > x1)
+	{
+		std::swap(x0, x1);
+	}
+	if (y0 > y1)
+	{
+		std::swap(y0, y1);
+	}
+	for (int y = y0; y < y1; y++)
+	{
+		for (int x = x0; x < x1; x++)
+		{
+			Graphics::PutPixel(x, y, c);
+		}
+	}
+}
+
+/*void Graphics::TestandSwap(int &a, int &b)
+{
+	if (a > b)
+	{
+		const int temp = a;
+		a = b;
+		b = temp;
+	}
+}*/
+
 
 //////////////////////////////////////////////////
 //           Graphics Exception
