@@ -41,28 +41,32 @@ void Game::UpdateModel()
     if (wnd.kbd.KeyIsPressed(VK_RIGHT)) // Top Left Hand Corner is controlled by the keyboard.
     {
         x0++;
+        width--;
         
     }
     if (wnd.kbd.KeyIsPressed(VK_LEFT))
     {
         x0--;
+        width++;
     }
     if (wnd.kbd.KeyIsPressed(VK_UP))
     {
         y0--;
+        height++;
     }
     if (wnd.kbd.KeyIsPressed(VK_DOWN))
     {
         y0++;
+        height--;
     }
 
     if (wnd.mouse.LeftIsPressed())// Lower Right Hand Corner is controlled by the mouse.
     {
-        x1 = wnd.mouse.GetPosX();
+        width = wnd.mouse.GetPosX() - x0;
     }
     if (wnd.mouse.LeftIsPressed())
     {
-        y1 = wnd.mouse.GetPosY();
+        height = wnd.mouse.GetPosY() - y0;
     }
     
 
@@ -87,7 +91,7 @@ void Game::ComposeFrame()
     /*Color c(255, 255, 0);//Constructor
     gfx.DrawRect(xPos, yPos, xPos + width, yPos + height, c);
     */
-    gfx.DrawRect(x0, y0, x1, y1, Colors::Magenta);
+    gfx.DrawRect(x0, y0, width, height, Colors::Magenta);
 
     /*int v = 69;
     int& r = v;

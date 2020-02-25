@@ -56,7 +56,8 @@ public:
 		PutPixel( x,y,{ unsigned char( r ),unsigned char( g ),unsigned char( b ) } );
 	}
 	void PutPixel( int x,int y,Color c );
-	void DrawRect(int x0, int y0, int x1, int y1, Color c);
+	//void DrawRect(int x0, int y0, int x1, int y1, Color c);
+	void DrawRect(int x0, int y0, int width, int height, Color C);
 	//void TestandSwap(int &a, int &b);
 	~Graphics();
 private:
